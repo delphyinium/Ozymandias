@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { View, ScrollView, SafeAreaView, StyleSheet, Platform } from 'react-native';
 import Header from '../header';
 import Footer from '../footer';
+import { styles } from './styles';
 import { COLORS } from '../../services/constants';
 
 interface ScreenLayoutProps {
@@ -13,7 +14,6 @@ interface ScreenLayoutProps {
 }
 
 const FOOTER_HEIGHT = 60;
-const HEADER_HEIGHT = 60;
 
 const ScreenLayout: React.FC<ScreenLayoutProps> = ({ 
   children, 
@@ -51,7 +51,7 @@ const ScreenLayout: React.FC<ScreenLayoutProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: styles.background,
     paddingTop: Platform.OS === 'web' ? 0 : undefined, // Remove SafeAreaView padding on web
   },
   scrollView: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     height: FOOTER_HEIGHT,
-    backgroundColor: COLORS.primary,
+    backgroundColor: styles.primary,
     borderTopWidth: 1,
     borderTopColor: 'rgba(255,255,255,0.2)',
   },

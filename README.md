@@ -1,89 +1,72 @@
-# Ozymandias: An Interactive Digital Analysis
+# Ozymandias
 
-A comprehensive digital analysis of Percy Bysshe Shelley's poem "Ozymandias" built with React Native (Expo) and TypeScript.
+A React Native application exploring ancient Egyptian history through interactive galleries and educational content.
 
-## About the Project
+## Features
 
-This interactive web application provides a deep exploration of Shelley's "Ozymandias," featuring:
-
-- Complete text of the poem with contextual information
-- Analysis of major themes and literary devices
-- Visual gallery of related images
-- Audio reading experience
-- Interactive historical timeline
-- Reflective conclusion on the poem's enduring relevance
-
-## Technology Stack
-
-- React Native with Expo (for web deployment)
-- TypeScript with strict typing
-- React Navigation for screen navigation
-- Structured component architecture
-- Consistent styling with StyleSheet
+- Interactive gallery of ancient Egyptian artifacts
+- Historical information about Ramesses II
+- Educational content about hieroglyphic inscriptions
+- Mobile and web responsive design
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14+)
+- Node.js (v14 or higher)
 - npm or yarn
+- Expo CLI
 
 ### Installation
 
-1. Clone this repository
-```
-git clone <repository-url>
+1. Clone the repository:
+```bash
+git clone https://github.com/delphyinium/Ozymandias.git
+cd Ozymandias
 ```
 
-2. Install dependencies
-```
-cd Ozymandias
+2. Install dependencies:
+```bash
 npm install
+```
+
+3. Start the development server:
+```bash
+npm start
 ```
 
 ### Running the App
 
-To start the development server for web:
-```
-npm run web
-```
+- For web: `npm run web`
+- For iOS: `npm run ios`
+- For Android: `npm run android`
 
-To run on iOS simulator:
-```
-npm run ios
-```
+## Deployment
 
-To run on Android emulator:
-```
-npm run android
-```
+The app is deployed on Vercel and can be accessed at: [Your Vercel URL]
+
+## Built With
+
+- React Native
+- Expo
+- React Navigation
+- TypeScript
 
 ## Project Structure
 
-The project follows a modular structure:
+```
+Ozymandias/
+├── app/           # App screens and navigation
+├── assets/        # Images and static assets
+├── components/    # Reusable UI components
+├── services/      # API and data services
+└── public/        # Web deployment files
+```
 
-- `/app` - Screen components organized by feature
-- `/components` - Reusable UI components
-- `/services` - Data, constants, and shared utilities
-- `/assets` - Static assets like images and fonts
+## Contributing
 
-## Features
-
-1. **Home** - Introduction to the poem and poet
-2. **Poem** - The complete text with annotations
-3. **Themes** - Analysis of major themes
-4. **Literary Devices** - Exploration of poetic techniques
-5. **Gallery** - Visual exploration with related imagery
-6. **Audio** - Listen to the poem with synchronized text
-7. **Timeline** - Historical context in chronological format
-8. **Conclusion** - Reflections on the poem's significance
+Feel free to submit issues and enhancement requests!
 
 ## License
 
-This project is intended for educational purposes and personal use.
-
-## Acknowledgments
-
-- Percy Bysshe Shelley for the timeless poem
-- The Romantic poetry tradition
-- Educational resources on "Ozymandias" 
+This project is licensed under the MIT License - see the LICENSE file for details. 

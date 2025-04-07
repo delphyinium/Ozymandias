@@ -9,7 +9,6 @@ import { ROUTES, POEM_TEXT } from '../../services/constants';
 const AudioScreen: React.FC = () => {
   const navigation = useNavigation();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
   const totalDuration = 90; // 1:30 in seconds
 
   // Mock data for a placeholder audio player
@@ -29,18 +28,20 @@ const AudioScreen: React.FC = () => {
   // Determine which line should be highlighted based on current time
   const getCurrentLine = () => {
     // This is a simplistic implementation - in a real app you'd sync this with audio timestamps
-    if (currentTime < 15) return 0;
-    if (currentTime < 25) return 1;
-    if (currentTime < 35) return 2;
-    if (currentTime < 42) return 3;
-    if (currentTime < 50) return 4;
-    if (currentTime < 58) return 5;
-    if (currentTime < 66) return 6;
-    if (currentTime < 72) return 7;
-    if (currentTime < 78) return 8;
-    if (currentTime < 82) return 9;
-    if (currentTime < 86) return 10;
-    if (currentTime < 90) return 11;
+    // Replace currentTime with a state variable tied to actual audio playback position if implementing fully
+    const placeholderCurrentTime = 0; // Placeholder for currentTime
+    if (placeholderCurrentTime < 15) return 0;
+    if (placeholderCurrentTime < 25) return 1;
+    if (placeholderCurrentTime < 35) return 2;
+    if (placeholderCurrentTime < 42) return 3;
+    if (placeholderCurrentTime < 50) return 4;
+    if (placeholderCurrentTime < 58) return 5;
+    if (placeholderCurrentTime < 66) return 6;
+    if (placeholderCurrentTime < 72) return 7;
+    if (placeholderCurrentTime < 78) return 8;
+    if (placeholderCurrentTime < 82) return 9;
+    if (placeholderCurrentTime < 86) return 10;
+    if (placeholderCurrentTime < 90) return 11;
     return 12;
   };
 
@@ -61,15 +62,17 @@ const AudioScreen: React.FC = () => {
           <Text style={styles.audioTitle}>Ozymandias by Percy Bysshe Shelley</Text>
           
           <View style={styles.timeDisplay}>
-            <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
+            {/* Replace 0 with actual currentTime state when implemented */}
+            <Text style={styles.timeText}>{formatTime(0)}</Text>
             <Text style={styles.timeText}>{formatTime(totalDuration)}</Text>
           </View>
           
           <View style={styles.progressContainer}>
             <View 
               style={[
-                styles.progressBar, 
-                { width: `${(currentTime / totalDuration) * 100}%` }
+                styles.progressBar,
+                // Replace 0 with actual currentTime state when implemented
+                { width: `${(0 / totalDuration) * 100}%` }
               ]} 
             />
           </View>

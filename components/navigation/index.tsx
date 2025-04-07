@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { ROUTES } from '../../services/constants';
 import { RootStackParamList } from '../../services/types/navigation-types';
 
 // Import screens

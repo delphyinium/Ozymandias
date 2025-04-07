@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { styles } from './styles';
 import { FooterProps } from './types';
-import { ROUTES } from '../../services/constants';
 import { RootStackParamList } from '../../services/types/navigation-types';
 
 type NavItem = {
