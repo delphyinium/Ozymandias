@@ -8,8 +8,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "predeploy": "expo export:web",
-    "deploy": "gh-pages -d web-build"
+    "build": "expo export --platform web",
+    "predeploy": "expo export --platform web --output-dir dist && cp -r public/* dist/",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
