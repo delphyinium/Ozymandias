@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { COLORS, SPACING } from '../../services/constants';
+import { COLORS, SPACING, FONT_SIZES } from '../../services/constants';
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,43 +8,90 @@ export const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: SPACING.lg,
+    padding: SPACING.md,
   },
   title: {
-    fontSize: 24,
+    fontSize: FONT_SIZES.title,
     fontWeight: 'bold',
     color: COLORS.text,
     marginBottom: SPACING.md,
   },
   description: {
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: FONT_SIZES.md,
     color: COLORS.text,
+    lineHeight: 22,
     marginBottom: SPACING.lg,
   },
   audioPlayer: {
     backgroundColor: COLORS.card,
-    borderRadius: 8,
-    padding: SPACING.lg,
+    borderRadius: 10,
+    padding: SPACING.md,
     marginBottom: SPACING.lg,
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
+    shadowRadius: 4,
   },
   audioTitle: {
-    fontSize: 18,
+    fontSize: FONT_SIZES.lg,
     fontWeight: 'bold',
     color: COLORS.text,
     marginBottom: SPACING.md,
     textAlign: 'center',
+  },
+  timeDisplay: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: SPACING.xs,
+  },
+  timeText: {
+    fontSize: FONT_SIZES.sm,
+    color: COLORS.text,
+  },
+  progressContainer: {
+    height: 6,
+    backgroundColor: COLORS.border,
+    borderRadius: 3,
+    marginBottom: SPACING.md,
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  progressBar: {
+    height: '100%',
+    backgroundColor: COLORS.primary,
+    borderRadius: 3,
+  },
+  progressInteraction: {
+    position: 'absolute',
+    top: -10,
+    left: 0,
+    right: 0,
+    height: 26,
+    flexDirection: 'row',
+  },
+  seekButton: {
+    flex: 1,
+    height: '100%',
   },
   audioControls: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: SPACING.md,
+  },
+  controlButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: SPACING.md,
+  },
+  controlButtonText: {
+    color: 'white',
+    fontSize: 16,
   },
   playButton: {
     width: 60,
@@ -54,74 +101,68 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  playIcon: {
-    width: 20,
-    height: 20,
-    marginLeft: 4, // To center the play triangle visually
+  playButtonText: {
+    color: 'white',
+    fontSize: 24,
   },
-  pauseIcon: {
-    width: 20,
-    height: 20,
-  },
-  timeDisplay: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: SPACING.sm,
-  },
-  timeText: {
-    fontSize: 12,
-    color: COLORS.text,
-  },
-  progressContainer: {
-    height: 5,
-    backgroundColor: COLORS.border,
-    borderRadius: 3,
-    marginBottom: SPACING.md,
-  },
-  progressBar: {
-    height: '100%',
-    backgroundColor: COLORS.primary,
-    borderRadius: 3,
-  },
-  audioInfo: {
-    marginTop: SPACING.md,
-  },
-  audioInfoText: {
-    fontSize: 14,
+  loadingText: {
+    fontSize: FONT_SIZES.md,
     color: COLORS.text,
     textAlign: 'center',
-    fontStyle: 'italic',
+  },
+  errorText: {
+    fontSize: FONT_SIZES.md,
+    color: COLORS.secondary,
+    textAlign: 'center',
+  },
+  audioInfo: {
+    marginTop: SPACING.sm,
+  },
+  audioInfoText: {
+    fontSize: FONT_SIZES.sm,
+    color: COLORS.text,
+    textAlign: 'center',
   },
   poemText: {
     backgroundColor: COLORS.card,
-    borderRadius: 8,
-    padding: SPACING.lg,
+    borderRadius: 10,
+    padding: SPACING.md,
     marginBottom: SPACING.lg,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
   },
   poemTextContent: {
-    fontSize: 16,
+    fontSize: FONT_SIZES.md,
     lineHeight: 24,
+    marginBottom: SPACING.sm,
     color: COLORS.text,
-    fontStyle: 'italic',
-    textAlign: 'center',
   },
   currentLine: {
-    color: COLORS.primary,
+    backgroundColor: COLORS.highlight,
     fontWeight: 'bold',
+    borderRadius: 4,
+    padding: 2,
   },
   buttonContainer: {
-    marginTop: SPACING.lg,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: SPACING.md,
   },
   navButton: {
     backgroundColor: COLORS.primary,
-    padding: SPACING.md,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.lg,
     borderRadius: 8,
+    minWidth: 150,
+    justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: SPACING.md,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 16,
+    color: 'white',
+    fontSize: FONT_SIZES.md,
     fontWeight: 'bold',
   },
 }); 

@@ -1,7 +1,24 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { COLORS, SPACING } from '../../services/constants';
 
-// const { width } = Dimensions.get('window'); // Removed unused width
+const { width } = Dimensions.get('window');
+const IMAGE_HEIGHT = width * 0.6;
+
+// Platform-specific shadow styles
+const cardShadow = Platform.select({
+  ios: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  android: {
+    elevation: 3,
+  },
+  web: {
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+  },
+});
 
 export const styles = StyleSheet.create({
   container: {
@@ -33,20 +50,64 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.card,
     borderRadius: 12,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
+    ...cardShadow,
   },
   imageContainer: {
     width: '100%',
-    height: 300,
-    backgroundColor: '#e1e4e8',
+    height: IMAGE_HEIGHT,
+    backgroundColor: COLORS.border,
+    position: 'relative',
   },
   image: {
     width: '100%',
     height: '100%',
+    backgroundColor: 'transparent',
+  },
+  loadingContainer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  },
+  progressContainer: {
+    width: 200,
+    height: 4,
+    backgroundColor: COLORS.border,
+    borderRadius: 2,
+    overflow: 'hidden',
+    marginBottom: SPACING.sm,
+  },
+  progressBar: {
+    height: '100%',
+    backgroundColor: COLORS.primary,
+    borderRadius: 2,
+  },
+  loadingText: {
+    color: COLORS.text,
+    marginTop: SPACING.sm,
+    fontSize: 14,
+  },
+  errorContainer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  },
+  errorText: {
+    color: '#fff',
+    fontSize: 14,
+    marginBottom: SPACING.sm,
+  },
+  retryButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderRadius: 4,
+  },
+  retryText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   cardContent: {
     padding: SPACING.md,
